@@ -1,0 +1,54 @@
+Diagnostico 1-b
+Ricardo Camila 7mo 4ta 
+a) CREATE TABLE MARCAS (
+IdMarca SMALLINT NOT NULL DEFAULT 1,
+NombreMarca CHAR(10) NOT NULL,
+NombreCiudad CHAR(60) NOT NULL,
+PRIMARY KEY (idMarca))
+b)
+CREATE TABLE COCHES (
+codcoche SMALLINT NOT NULL,
+nombre CHAR(15) NOT NULL,
+modelo CHAR(10),
+PRIMARY KEY (codcoche))
+c)
+CREATE TABLE MARCO (
+IdMarca SMALLINT NOT NULL,
+codcoche SMALLINT NOT NULL,
+PRIMARY KEY (cifm,codcoche),
+FOREIGN KEY (cifm) REFERENCES MARCA,
+FOREIGN KEY (codcoche) REFERENCES COCHE)
+d)
+INSERT INTO MARCAS VALUES (1,'vw','Mar del Plata')
+INSERT INTO MARCAS VALUES (2,'renault','Rosario')
+INSERT INTO MARCAS VALUES (3,'fiat','Cordoba')
+INSERT INTO MARCAS VALUES (4,'ford','Neuquen')
+e)
+SELECT * FROM MARCAS
+f)
+SELECT nombre, ciudad FROM MARCAS
+g)
+select nombre,ciudad from MARCAS where IdMarca = 2
+h)
+select NombreMarca,ciudad from marca
+where ciudad = 'Neuquen'
+i)
+select nombre,ciudad
+from marcas
+where ciudad LIKE 'S%'
+j)
+update marcas
+set ciudad = 'Nuequen'
+where ciudad = 'Jujuy'
+ENUNCIADO:
+a) Crear tabla marcas con los campos (IdMarca PRIMARY KEY, NombreMarca CHAR(10), NombreCiudad CHAR(60))
+b) Crear tabla coches con los campos (codcoche PRIMARY KEY, nombre CHAR(15) NOT NULL, modelo CHAR(10))
+c) Crear tabla marco con los campos (IdMarca PRIMARY KEY, codcoche PRIMARY KEY y crear dos restricciones de clave externa.
+d) Insertar filas en la tabla marcas para los campos (IdMarca, NombreMarca y NombreCiudad.
+e) Selecciona las filas y columnas de la tabla marcas.
+f)Selecciona únicamente las columnas nombre y ciudad de la tabla marcas.
+g) Selecciona las columnas nombre y ciudad de la tabla marcas donde el valor de IdMarca sea igual a 2.
+h) Selecciona la columna NombreMarca y ciudad de la tabla marcas. Luego dale el valor de Neuquen a ciudad.
+i) Selecciona las columnas nombre y ciudad de la tabla marcas, luego que muestre las ciudades que empiecen con S.
+j) Actualiza el valor de la columna ciudad en la tabla marcas por Jujuy. 
+
